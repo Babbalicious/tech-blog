@@ -1,15 +1,17 @@
-const { Model, DataType } = require("sequelize");
+const { Model, DataTypes } = require("sequelize");
+const bcrypt = require("bcrypt");
+const sequelize = require("../config/connection");
 
 class Post extends Model {}
 
 Post.init(
   {
     title: {
-      type: DataType.STRING,
+      type: DataTypes.STRING,
       allowNull: false,
     },
     text: {
-      type: DataType.STRING,
+      type: DataTypes.STRING,
       allowNull: false,
     },
   },
